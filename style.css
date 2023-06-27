@@ -1,0 +1,27 @@
+body {
+    background-image: url(images/background.jpg);
+    background-size: cover;
+}
+
+.parent-grid {
+    display: grid;
+    border: 1px solid black ;
+    flex-direction: column;
+}
+
+.header {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.first-column {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: white;
+}
+
+.second-column {
+    grid-column: 4;
+    grid-row: 2;
+    background-color: white;
+}
