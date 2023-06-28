@@ -15,10 +15,10 @@ function(){
             const date = new Date (obj.date);
             const hours = date.getHours();
             const minutes = date.getMinutes();
-            trips += `<div class='trip'>${obj.departure} > ${obj.arrival} ${hours}:${minutes} ${obj.price} <button id=''>Book</button></div>`
+            trips += `<div class='trip'><span>${obj.departure} > ${obj.arrival}</span><span>${hours}:${minutes}</span><span>${obj.price}€</span><button id='${obj._id}'>Book</button></div>`
         }
-
-        document.querySelector('.second-column').innerHTML = trips
+        document.querySelector('#trips-container').innerHTML = trips
     });
 });
+
 
