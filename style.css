@@ -2,6 +2,11 @@ body {
     margin: 0;
     padding: 0;
 }
+#container {
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    height: 100vh;
+}
 h1, h2 {
     padding: 0;
     color: white;
@@ -33,26 +38,25 @@ header ul {
 }
 
 
-/* Contenu de la page */
+/* Contenu de la page index.html */
 
 main {
     padding: 1em;
-    background-image: url(images/background.jpg);
-    background-size: cover;
 }
 #search-container {
     display: grid;
-    grid-template-rows: 1fr 200px 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 300px 0.5fr 300px 1fr;
 }
 #calendar-container, #trips-container {
+    height: 300px;
+    padding: 2em 1em;
     background-color: white;
     border-radius: 1em;
 }
 #calendar-container {
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
-    padding: 2em 1em;
 }
 #calendar-container .form {
     display: flex;
@@ -73,18 +77,88 @@ button#search {
     box-sizing: border-box;
     padding: 0.7em 0;
     color: white;
-    background-color: #64a492;
+    background-color: #469e86;
 }
 #trips-container {
     grid-row: 1 / span 1;
     grid-column: 4 / span 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    overflow-y: auto;
 }
-
+#trips-container img {
+    width: 90%;
+    height: auto;
+}
+.trip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background-color: #f6eeef;
+    border-radius: 0.4em;
+}
+.trip button, #cart-container button {
+    padding: 0.5em;
+    color: white;
+    background-color: #469e86;
+    border-radius: 0.4em;
+}
 #go {
     padding-top: 70%;
     size: 2;
+}
+
+
+/* Contenu de la page cart.htm */
+
+#cart-container, #bookings-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 400px;
+    margin: 3em auto 2em auto;
+    background-color: white;
+    border-radius: 1em;
+}
+#cart-container h1, #bookings-container h1 {
+    flex-shrink: 0;
+    color: black;
+    margin: 1em 1em 0 1em;
+    font-size: 1.4em;
+}
+#cart-container #cart, #bookings-container #bookings {
+    margin: 2em 10%;
+    padding: 0 1em;
+    overflow-y: auto;
+}
+#sum-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    height: 50px;
+    padding: 0 2em;
+    color: white;
+    background-color: #01153f;
+    border-radius: 0 0 1em 1em;
+}
+
+
+/* Contenu de la page bookings.htm */
+
+#bookings-footer {
+    text-align: center;
+    flex-shrink: 0;
+    height: 50px;
+    padding: 0 2em;
+    color: #469e86;
+    border-top: 2px solid #469e86;
+    border-radius: 0 0 1em 1em;
 }

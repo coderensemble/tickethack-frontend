@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>TicketHack</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container">
+        <div id="container">
             <header>
                 <div><a href="">TicketHack</a></div>
                 <ul>
@@ -41,17 +41,5 @@
             </main>
         </div>
         <script src="script.js"></script>
-        <script>function testResults (form) {
-            let inputValue = form.inputbox.value;
-            let formData = new FormData(form);
-            let object = {};
-            formData.forEach(function(value, key){
-              object[key] = value;
-            });
-            var json = JSON.stringify(object);
-            alert(json);
-          
-            alert(JSON.stringify(Object.fromEntries(formData)));
-          }</script>
     </body>
 </html>
