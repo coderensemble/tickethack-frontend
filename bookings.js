@@ -1,34 +1,20 @@
 //document.querySelector("#bookings").remove();
-fetch(`http://localhost:3000/users/bookings/Adriena`)
+fetch(`http://localhost:3000/users/bookings/Adrien`)
   .then((response) => response.json())
   .then((data) => {
     //console.log(data)
+    let ticket = "";
     if (data.result) {
       for (let obj of data.tickets) {
         //console.log(obj.trip);
         const date = new Date(obj.trip.date);
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        document.querySelector("#bookings").innerHTML = `${obj.trip.departure} > ${obj.trip.arrival}${hours}:${minutes}${obj.trip.price}€`
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        ticket += `<div class="trip"><span>${obj.trip.departure} &gt; ${obj.trip.arrival}</span><span>${hours}:${minutes}</span><span>${obj.trip.price}€</span><span>departure in 3 hours</span></div>`
+
       }
-    } else {
-      document.querySelector("#bookings").innerHTML = `<div class='noTickets'>No tickets in your cart.</div>`;
-    }
+    } else ticket = "No tickets in your cart.";
+
+    document.querySelector("#bookings").innerHTML = ticket;
   });
-// if (data.users) {
-//     for (let i = 0; i < data.weather.length; i++) {
-//         document.querySelector('#cityList').innerHTML += `
-//         <div class="cityContainer">
-//         <p class="name">${data.weather[i].cityName}</p>
-//         <p class="description">${data.weather[i].description}</p>
-//         <img class="weatherIcon" src="images/${data.weather[i].main}.png"/>
-//         <div class="temperature">
-//             <p class="tempMin">${data.weather[i].tempMin}°C</p>
-//             <span>-</span>
-//             <p class="tempMax">${data.weather[i].tempMax}°C</p>
-//         </div>
-//         <button class="deleteCity" id="${data.weather[i].cityName}">Delete</button>
-//     </div>
-//     `;
-//     }
-// updateDeleteCityEventListener();
+
