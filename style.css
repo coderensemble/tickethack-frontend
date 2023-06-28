@@ -1,41 +1,87 @@
 body {
+    margin: 0;
+    padding: 0;
+}
+h1, h2 {
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+h1 {
+    margin: 0 0 1em 0;
+}
+h2 {
+    margin: 0 0 2em 0;
+}
+
+
+/* Header de la page */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 2em 2em 1em 2em;
+}
+header ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Contenu de la page */
+
+main {
+    padding: 1em;
     background-image: url(images/background.jpg);
     background-size: cover;
 }
-
-.parent-grid {
-    height: 100vh;
-    width: 100vw;
+#search-container {
     display: grid;
+    grid-template-rows: 1fr 200px 1fr;
+    grid-template-columns: 1fr 300px 0.5fr 300px 1fr;
+}
+#calendar-container, #trips-container {
+    background-color: white;
+    border-radius: 1em;
+}
+#calendar-container {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    padding: 2em 1em;
+}
+#calendar-container .form {
+    display: flex;
     flex-direction: column;
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-columns: repeat(12, 1fr);
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2em;
 }
-
-.header {
-    grid-column-start: 1;
-   grid-column-end: 12;
-   grid-row-start: 1;
-   grid-row-end: 1;
-   text-align: center;
+#calendar-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 0.3em;
+    border-radius: 0.4em;
 }
-
-.first-column {
-    border-radius: 2%;
-    grid-column-start: 3;
-   grid-column-end: 6;
-   grid-row-start: 3;
-   grid-row-end: 10;
-    background-color: white;
+button#search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.7em 0;
+    color: white;
+    background-color: #64a492;
 }
-
-.second-column {
-    border-radius: 2%;
-    grid-column-start: 7;
-   grid-column-end: 10;
-   grid-row-start: 3;
-   grid-row-end: 10;
-    background-color: white;
+#trips-container {
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #go {

@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="parent-grid">
-        <div class="header">
-            <h1>Explore the world effortlessly by train!</h1>
-        </div>
-        <div class="first-column">
-            <label for="start">Start date:</label>
-
-            <input type="date" id="start" name="trip-start"
-            value="2018-07-22"
-            min="2018-01-01" max="2018-12-31">
-
-            <div id="search">search</div>
-
-        </div>
-        <div class="second-column">
-            <img src="" alt="">
-            <h2 id="go">it's time to book your future trip.</h2>
-            
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div><a href="">TicketHack</a></div>
+                <ul>
+                    <li><a href="cart.htm">Cart</a></li>
+                    <li><a href="bookings.htm">Bookings</a></li>
+                </ul>
+            </header>
+            <main>
+                <h1>Explore the world effortlessly by train!</h1>
+                <h2>Compare, book, and enjoy cheap prices for train tickets: your journey starts on Tickeyhack.</h2>
+                <div id="search-container">
+                    <div id="calendar-container">
+                        <div class="form">
+                            <div id="cities">
+                              <input type="text" name="departure" id="departure" placeholder="Departure" required />
+                              <input type="text" name="arrival" id="arrival" placeholder="Arrival" required />
+                            </div>
+                            <div>
+                                <input type="date" name="date" id="date" required>
+                            </div>
+                            <div>
+                              <button id="search">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="trips-container">
+                        <img src="./images/train.png" alt="">
+                        <p>it's time to book your future trip.</p>
+                    </div>
+                </div>
+            </main>
         </div>
         <script src="script.js"></script>
-    </div>
-</body>
+        <script>function testResults (form) {
+            let inputValue = form.inputbox.value;
+            let formData = new FormData(form);
+            let object = {};
+            formData.forEach(function(value, key){
+              object[key] = value;
+            });
+            var json = JSON.stringify(object);
+            alert(json);
+          
+            alert(JSON.stringify(Object.fromEntries(formData)));
+          }</script>
+    </body>
 </html>
