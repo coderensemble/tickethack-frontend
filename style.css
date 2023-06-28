@@ -4,24 +4,41 @@ body {
 }
 
 .parent-grid {
+    height: 100vh;
+    width: 100vw;
     display: grid;
-    border: 1px solid black ;
     flex-direction: column;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .header {
-    grid-column: 1;
-    grid-row: 1;
+    grid-column-start: 1;
+   grid-column-end: 12;
+   grid-row-start: 1;
+   grid-row-end: 1;
+   text-align: center;
 }
 
 .first-column {
-    grid-column: 2;
-    grid-row: 2;
+    border-radius: 2%;
+    grid-column-start: 3;
+   grid-column-end: 6;
+   grid-row-start: 3;
+   grid-row-end: 10;
     background-color: white;
 }
 
 .second-column {
-    grid-column: 4;
-    grid-row: 2;
+    border-radius: 2%;
+    grid-column-start: 7;
+   grid-column-end: 10;
+   grid-row-start: 3;
+   grid-row-end: 10;
     background-color: white;
+}
+
+#go {
+    padding-top: 70%;
+    size: 2;
 }
