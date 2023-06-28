@@ -19,13 +19,13 @@ document.querySelector("#search").addEventListener("click", function () {
     });
 });
 
-document.querySelectorAll(`.add-trip`).addEventListener("click", function (addCart) {
-    console.log("fghb");
-    const tripId = document.querySelector(`.add-trip`).value;
-    console.log(tripId)
-    fetch(`http://localhost:3000/trips/${departure}/${arrival}/${dateTrip}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ trip: tripId, user: "adrien" }),
-    }).then((window.location.href = "./cart.htm"));
-  });
+// document.querySelectorAll(`.add-trip`).addEventListener("click", function (addCart) {
+//     console.log("fghb");
+//     const tripId = document.querySelector(`.add-trip`).value;
+//     console.log(tripId)
+//     fetch(`http://localhost:3000/trips/${departure}/${arrival}/${dateTrip}`, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ trip: tripId, user: "adrien" }),
+//     }).then((window.location.href = "./cart.htm"));
+//   });
